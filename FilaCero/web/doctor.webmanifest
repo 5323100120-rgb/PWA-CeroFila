@@ -1,0 +1,23 @@
+{
+  "name": "FilaCero — Panel Médico y Recepción",
+  "short_name": "FilaCero Med",
+  "description": "PWA operativa para gestión de turnos, llamado a consultorio y verificación QR.",
+  "start_url": "/doctor.html",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f6f8fb",
+  "theme_color": "#0a8479",
+  "lang": "es-MX",
+  "icons": [
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

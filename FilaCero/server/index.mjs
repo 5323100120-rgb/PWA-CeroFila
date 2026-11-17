@@ -112,7 +112,7 @@ async function api(req,res,url){
   return fail(res,404,'Ruta de API no encontrada.');
 }
 async function staticFile(req,res,pathName) {
-  const pathname=pathName==='/'||pathName==='/admin'?'/index.html':pathName;
+  const pathname = pathName === '/' || pathName === '/admin' ? '/index.html' : pathName === '/doctor' ? '/doctor.html' : pathName;
   const safe=path.normalize(decodeURIComponent(pathname)).replace(/^[/\\]+/,'');
   const file=path.resolve(ROOT,safe);
   if(!file.startsWith(ROOT+path.sep) && file!==ROOT){res.writeHead(403);res.end();return;}

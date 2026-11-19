@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "FilaCero.Api": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "launchUrl": "api/health",
+      "environmentVariables": { "ASPNETCORE_ENVIRONMENT": "Development", "DEMO_MODE": "true" },
+      "applicationUrl": "http://0.0.0.0:5071"
+    }
+  }
+}

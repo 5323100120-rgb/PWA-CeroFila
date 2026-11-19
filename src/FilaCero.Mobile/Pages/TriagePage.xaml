@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FilaCero.Mobile.Pages.TriagePage" Title="Triaje">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="16">
+            <VerticalStackLayout Spacing="2">
+                <Label Text="PASO 02 DE 02" Style="{StaticResource Eyebrow}" CharacterSpacing="1.2" />
+                <Label Text="Pre-triaje de síntomas" Style="{StaticResource BigTitle}" />
+                <Label Text="Marca los síntomas que presentas hoy para agilizar tu valoración." Style="{StaticResource SubText}" />
+            </VerticalStackLayout>
+
+            <Border BackgroundColor="White" Stroke="{StaticResource Line}" StrokeShape="RoundRectangle 18" Padding="18">
+                <VerticalStackLayout Spacing="14">
+                    <Label Text="Síntomas de alerta" FontAttributes="Bold" FontSize="15" TextColor="{StaticResource Danger}" />
+                    <Grid ColumnDefinitions="*,Auto" ColumnSpacing="12">
+                        <Label Grid.Column="0" Text="Dolor en el pecho" VerticalOptions="Center" />
+                        <Switch x:Name="ChestPain" Grid.Column="1" />
+                    </Grid>
+                    <Grid ColumnDefinitions="*,Auto" ColumnSpacing="12">
+                        <Label Grid.Column="0" Text="Dificultad para respirar" VerticalOptions="Center" />
+                        <Switch x:Name="Breathing" Grid.Column="1" />
+                    </Grid>
+                    <Grid ColumnDefinitions="*,Auto" ColumnSpacing="12">
+                        <Label Grid.Column="0" Text="Pérdida del conocimiento" VerticalOptions="Center" />
+                        <Switch x:Name="Unconscious" Grid.Column="1" />
+                    </Grid>
+
+                    <BoxView HeightRequest="1" Color="{StaticResource Line}" Margin="0,4" />
+
+                    <Label Text="Síntomas generales" FontAttributes="Bold" FontSize="15" />
+                    <Grid ColumnDefinitions="*,Auto" ColumnSpacing="12">
+                        <Label Grid.Column="0" Text="Fiebre o temperatura alta" VerticalOptions="Center" />
+                        <Switch x:Name="Fever" Grid.Column="1" />
+                    </Grid>
+                    <Grid ColumnDefinitions="*,Auto" ColumnSpacing="12">
+                        <Label Grid.Column="0" Text="Dolor intenso" VerticalOptions="Center" />
+                        <Switch x:Name="SeverePain" Grid.Column="1" />
+                    </Grid>
+                    <Grid ColumnDefinitions="*,Auto" ColumnSpacing="12">
+                        <Label Grid.Column="0" Text="Mareos o debilidad" VerticalOptions="Center" />
+                        <Switch x:Name="Dizziness" Grid.Column="1" />
+                    </Grid>
+
+                    <BoxView HeightRequest="1" Color="{StaticResource Line}" Margin="0,4" />
+
+                    <Label Text="Presión arterial (si la conoces)" Style="{StaticResource FieldLabel}" />
+                    <Grid ColumnDefinitions="*,*" ColumnSpacing="12">
+                        <VerticalStackLayout Grid.Column="0" Spacing="4">
+                            <Label Text="Sistólica" Style="{StaticResource SubText}"/>
+                            <Entry x:Name="Systolic" Keyboard="Numeric" Placeholder="Ej. 120" MaxLength="3" />
+                        </VerticalStackLayout>
+                        <VerticalStackLayout Grid.Column="1" Spacing="4">
+                            <Label Text="Diastólica" Style="{StaticResource SubText}"/>
+                            <Entry x:Name="Diastolic" Keyboard="Numeric" Placeholder="Ej. 80" MaxLength="3" />
+                        </VerticalStackLayout>
+                    </Grid>
+
+                    <Label Text="Motivo de consulta (opcional)" Style="{StaticResource FieldLabel}" />
+                    <Editor x:Name="Description" Placeholder="Describe brevemente cómo te sientes..." HeightRequest="90" MaxLength="400" />
+
+                    <Label x:Name="TriageResult" Text="Completa primero tu registro para habilitar el envío." Style="{StaticResource SubText}" />
+                    <Button x:Name="SendButton" Text="Obtener mi turno QR" Clicked="SendClicked" />
+                </VerticalStackLayout>
+            </Border>
+
+            <Border BackgroundColor="#FFF1F2" Stroke="#F0CBD0" StrokeShape="RoundRectangle 14" Padding="14">
+                <Label Text="En caso de emergencia médica grave, acude directamente a urgencias." TextColor="{StaticResource Danger}" FontSize="12" />
+            </Border>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

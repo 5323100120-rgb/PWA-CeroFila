@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FilaCero.Mobile.Pages.RegisterPage" Title="Registro">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="16">
+            <VerticalStackLayout Spacing="2">
+                <Label Text="PASO 01 DE 02" Style="{StaticResource Eyebrow}" CharacterSpacing="1.2" />
+                <Label Text="Elige tu consultorio" Style="{StaticResource BigTitle}" />
+                <Label Text="Selecciona la sucursal más cercana y captura tus datos básicos." Style="{StaticResource SubText}" />
+            </VerticalStackLayout>
+
+            <!-- Tarjeta 1: Buscador de Consultorios Similares -->
+            <Border BackgroundColor="White" Stroke="{StaticResource Line}" StrokeShape="RoundRectangle 18" Padding="16">
+                <VerticalStackLayout Spacing="10">
+                    <Label Text="Consultorios cercanos *" Style="{StaticResource FieldLabel}" />
+                    <Entry x:Name="ClinicSearchEntry" Placeholder="Buscar por zona o sucursal (ej. Centro, Norte)..." TextChanged="OnClinicSearchChanged" />
+                    <VerticalStackLayout x:Name="ClinicsListContainer" Spacing="8" />
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Tarjeta 2: Datos del Paciente -->
+            <Border BackgroundColor="White" Stroke="{StaticResource Line}" StrokeShape="RoundRectangle 18" Padding="18">
+                <VerticalStackLayout Spacing="12">
+                    <Label Text="Datos del paciente" FontAttributes="Bold" FontSize="17" />
+                    <BoxView HeightRequest="1" Color="{StaticResource Line}" />
+
+                    <Label Text="Nombre completo *" Style="{StaticResource FieldLabel}" />
+                    <Entry x:Name="FullNameEntry" Placeholder="Ej. Tania Lizbeth Portillo Cota" MaxLength="110" />
+
+                    <Label Text="Fecha de nacimiento *" Style="{StaticResource FieldLabel}" />
+                    <Border BackgroundColor="#F7FAFA" Stroke="{StaticResource Line}" StrokeShape="RoundRectangle 10" Padding="10,2">
+                        <DatePicker x:Name="BirthDatePicker" Format="dd/MM/yyyy" TextColor="{StaticResource Ink}" HeightRequest="46" />
+                    </Border>
+
+                    <Label Text="Receta o estudio previo (opcional)" Style="{StaticResource FieldLabel}" />
+                    <Grid ColumnDefinitions="*,Auto" ColumnSpacing="10">
+                        <Label x:Name="DocumentLabel" Grid.Column="0" Text="Sin archivo adjunto (PDF/JPG/PNG)" Style="{StaticResource SubText}" VerticalOptions="Center" />
+                        <Button Grid.Column="1" Text="Adjuntar" Style="{StaticResource OutlineButton}" HeightRequest="42" Padding="14,0" Clicked="ChooseDocument" />
+                    </Grid>
+
+                    <Button x:Name="RegisterButton" Text="Continuar al pre-triaje" Clicked="RegisterClicked" Margin="0,8,0,0" />
+                </VerticalStackLayout>
+            </Border>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

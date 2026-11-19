@@ -1,0 +1,21 @@
+CORRECCIÓN: XamlParseException - StaticResource not found for key BigTitle
+
+Causa: al resolver MainTabsPage directamente como parámetro del constructor
+App(MainTabsPage tabs, QueueStream stream), el contenedor DI construía las
+páginas ANTES de entrar al constructor de App, y antes de ejecutar
+App.InitializeComponent(). Por tanto App.xaml no había registrado los estilos.
+
+Corrección: App(IServiceProvider services, QueueStream stream) inicializa primero
+App.xaml y resuelve MainTabsPage sólo cuando se llama a CreateWindow().
+
+En Visual Studio Community:
+1. Cierra la ejecución.
+2. Abre el proyecto corregido o reemplaza App.xaml.cs con el archivo incluido.
+3. Menú Compilar > Limpiar solución.
+4. Menú Compilar > Recompilar solución.
+5. Establece FilaCero.Mobile como proyecto de inicio y ejecuta Android con F5.
+
+No es necesario agregar otra definición de BigTitle.
+
+Nota: este parche se revisó estáticamente; no fue posible compilar .NET MAUI
+en este entorno.

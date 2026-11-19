@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FilaCero.Mobile.App">
+  <Application.Resources>
+    <ResourceDictionary>
+      <!-- Tokens de color extraídos de FilaCero/web/style.css (PWA original). -->
+      <Color x:Key="Ink">#152943</Color>
+      <Color x:Key="Muted">#68798B</Color>
+      <Color x:Key="Teal">#0A8479</Color>
+      <Color x:Key="Deep">#006C64</Color>
+      <Color x:Key="Mint">#DFF8EF</Color>
+      <Color x:Key="Line">#E8EDF1</Color>
+      <Color x:Key="Canvas">#F6F8FB</Color>
+      <Color x:Key="Amber">#AA6B13</Color>
+      <Color x:Key="Danger">#BF394B</Color>
+      <Color x:Key="Surface">#FFFFFF</Color>
+
+      <Style TargetType="ContentPage">
+        <Setter Property="BackgroundColor" Value="{StaticResource Canvas}" />
+      </Style>
+      <Style TargetType="Label">
+        <Setter Property="TextColor" Value="{StaticResource Ink}"/>
+        <Setter Property="FontSize" Value="14"/>
+      </Style>
+      <Style x:Key="BigTitle" TargetType="Label">
+        <Setter Property="FontSize" Value="29"/>
+        <Setter Property="FontAttributes" Value="Bold"/>
+        <Setter Property="TextColor" Value="{StaticResource Ink}"/>
+      </Style>
+      <Style x:Key="SubText" TargetType="Label">
+        <Setter Property="FontSize" Value="13"/>
+        <Setter Property="TextColor" Value="{StaticResource Muted}"/>
+      </Style>
+      <Style x:Key="FieldLabel" TargetType="Label">
+        <Setter Property="FontSize" Value="13"/>
+        <Setter Property="FontAttributes" Value="Bold"/>
+      </Style>
+      <Style TargetType="Entry">
+        <Setter Property="TextColor" Value="{StaticResource Ink}"/>
+        <Setter Property="BackgroundColor" Value="#F7FAFA"/>
+        <Setter Property="HeightRequest" Value="50"/>
+      </Style>
+      <Style TargetType="Editor">
+        <Setter Property="TextColor" Value="{StaticResource Ink}"/>
+        <Setter Property="BackgroundColor" Value="#F7FAFA"/>
+      </Style>
+      <Style TargetType="Picker">
+        <Setter Property="TextColor" Value="{StaticResource Ink}"/>
+        <Setter Property="BackgroundColor" Value="#F7FAFA"/>
+      </Style>
+      <Style TargetType="Switch">
+        <Setter Property="OnColor" Value="{StaticResource Teal}"/>
+        <Setter Property="ThumbColor" Value="{StaticResource Surface}"/>
+      </Style>
+      <Style TargetType="Button">
+        <Setter Property="BackgroundColor" Value="{StaticResource Teal}"/>
+        <Setter Property="TextColor" Value="White"/>
+        <Setter Property="FontAttributes" Value="Bold"/>
+        <Setter Property="CornerRadius" Value="11"/>
+        <Setter Property="HeightRequest" Value="52"/>
+      </Style>
+      <Style x:Key="OutlineButton" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="{StaticResource Mint}"/>
+        <Setter Property="TextColor" Value="{StaticResource Deep}"/>
+      </Style>
+      <Style x:Key="WarnText" TargetType="Label">
+        <Setter Property="TextColor" Value="{StaticResource Amber}"/>
+        <Setter Property="FontSize" Value="12"/>
+      </Style>
+      <Style x:Key="Eyebrow" TargetType="Label">
+        <Setter Property="FontSize" Value="11"/>
+        <Setter Property="FontAttributes" Value="Bold"/>
+        <Setter Property="TextColor" Value="{StaticResource Teal}"/>
+      </Style>
+    </ResourceDictionary>
+  </Application.Resources>
+</Application>

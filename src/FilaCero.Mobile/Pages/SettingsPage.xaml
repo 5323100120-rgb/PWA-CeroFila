@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FilaCero.Mobile.Pages.SettingsPage" Title="Ajustes">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="16">
+            <VerticalStackLayout Spacing="2">
+                <Label Text="CONFIGURACIÓN" Style="{StaticResource Eyebrow}" CharacterSpacing="1.2" />
+                <Label Text="Ajustes" Style="{StaticResource BigTitle}" />
+                <Label Text="Administra la conexión y los datos guardados en tu teléfono." Style="{StaticResource SubText}" />
+            </VerticalStackLayout>
+
+            <Border BackgroundColor="White" Stroke="{StaticResource Line}" StrokeShape="RoundRectangle 18" Padding="18">
+                <VerticalStackLayout Spacing="12">
+                    <HorizontalStackLayout Spacing="12">
+                        <Border BackgroundColor="{StaticResource Mint}" StrokeThickness="0" StrokeShape="RoundRectangle 12" HeightRequest="42" WidthRequest="42">
+                            <Label Text="●" TextColor="{StaticResource Teal}" FontSize="20" HorizontalOptions="Center" VerticalOptions="Center" />
+                        </Border>
+                        <VerticalStackLayout Spacing="2" VerticalOptions="Center">
+                            <Label Text="Estado del servicio" FontAttributes="Bold" FontSize="16" />
+                            <Label Text="Conexión automática con clínica" Style="{StaticResource SubText}" />
+                        </VerticalStackLayout>
+                    </HorizontalStackLayout>
+                    <Label x:Name="HealthLabel" Text="Comprobando disponibilidad..." Style="{StaticResource SubText}" />
+                    <Button x:Name="CheckButton" Text="Comprobar conexión" Style="{StaticResource OutlineButton}" Clicked="CheckServiceClicked" />
+                </VerticalStackLayout>
+            </Border>
+
+            <Border BackgroundColor="White" Stroke="{StaticResource Line}" StrokeShape="RoundRectangle 18" Padding="18">
+                <VerticalStackLayout Spacing="12">
+                    <Label Text="Datos en este dispositivo" FontAttributes="Bold" FontSize="16" />
+                    <Label x:Name="SavedPassLabel" Text="Aquí puedes consultar si tienes un pase guardado." Style="{StaticResource SubText}" />
+                    <Button Text="Borrar sesión y pase local" BackgroundColor="{StaticResource Danger}" Clicked="ClearClicked" />
+                </VerticalStackLayout>
+            </Border>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
